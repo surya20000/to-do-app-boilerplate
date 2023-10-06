@@ -4,15 +4,15 @@ var toDoList = document.getElementById("todolist");
 var btn = document.getElementById("button");
 btn.onclick = click;
 
-function click ( ) {
-    ListOfActivities.push(input.values);
+function click () {
+    ListOfActivities.push(input.value);
     console.log(ListOfActivities)
-    input.values="";
+    input.value=" ";
     showList();
 }
 
 function showList( ) {
-    toDoList.innerHTML= " "
+    toDoList.innerHTML= "";
     ListOfActivities.forEach(function (n, i) {
         toDoList.innerHTML += 
         "<li>" +
@@ -20,9 +20,9 @@ function showList( ) {
         "<a onclick='edititem(" +
         i +
         ")'>Edit</a>" +
-        "<a onclick ='delete(" +
+        "<a onclick ='deleteItem(" +
         i + 
-        ")'>&times |</a></li>" 
+        ")'>&times | </a></li>"; 
 
     });
 }
